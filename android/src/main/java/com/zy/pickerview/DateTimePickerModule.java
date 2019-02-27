@@ -226,35 +226,17 @@ public class DateTimePickerModule extends ReactContextBaseJavaModule implements 
     // 只设置了开始时间，没有设置结束时间
     if(args.containsKey(ARG_MINDATE) && !args.containsKey((ARG_MAXDATE))) {
       startDate.setTimeInMillis(args.getLong(ARG_MINDATE));
-      startDate.set(Calendar.HOUR_OF_DAY, 0);
-      startDate.set(Calendar.MINUTE, 0);
-      startDate.set(Calendar.SECOND, 0);
-      startDate.set(Calendar.MILLISECOND, 0);
       endDate.set(Calendar.DATE, endDate.get(Calendar.YEAR) + 10);
-      timePickerBuilder.setRangDate(startDate, endDate);
     } else if (args.containsKey(ARG_MAXDATE) && !args.containsKey(ARG_MINDATE)) {
       // 只设置了结束时间，没有设置开始时间
       startDate.setTimeInMillis(DEFAULT_MIN_DATE);
       endDate.setTimeInMillis(args.getLong(ARG_MAXDATE));
-      endDate.set(Calendar.HOUR_OF_DAY, 23);
-      endDate.set(Calendar.MINUTE, 59);
-      endDate.set(Calendar.SECOND, 59);
-      endDate.set(Calendar.MILLISECOND, 999);
-      timePickerBuilder.setRangDate(startDate, endDate);
     } else if (args.containsKey(ARG_MAXDATE) && args.containsKey(ARG_MINDATE)) {
       // 同时设置了开始时间和结束时间
       startDate.setTimeInMillis(args.getLong(ARG_MINDATE));
-      startDate.set(Calendar.HOUR_OF_DAY, 0);
-      startDate.set(Calendar.MINUTE, 0);
-      startDate.set(Calendar.SECOND, 0);
-      startDate.set(Calendar.MILLISECOND, 0);
       endDate.setTimeInMillis(args.getLong(ARG_MAXDATE));
-      endDate.set(Calendar.HOUR_OF_DAY, 23);
-      endDate.set(Calendar.MINUTE, 59);
-      endDate.set(Calendar.SECOND, 59);
-      endDate.set(Calendar.MILLISECOND, 999);
-      timePickerBuilder.setRangDate(startDate, endDate);
     }
+    timePickerBuilder.setRangDate(startDate, endDate);
   }
 
   /**
