@@ -12,7 +12,7 @@ const DatePickerModule = NativeModules.ZYDateTimePicker;
     const dateVal = options[key];
     // Is it a Date object?
     if (dateVal && typeof dateVal === 'object' && typeof dateVal.getMonth === 'function') {
-      options[key] = dateVal.getTime() + 8 * 60 * 60 * 1000;
+      options[key] = dateVal.getTime();
     }
   }
   
