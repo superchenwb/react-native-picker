@@ -1,5 +1,11 @@
 apply plugin: 'com.android.library'
 
+allprojects {
+		repositories {
+			maven { url 'https://jitpack.io' }
+		}
+	}
+
 def DEFAULT_COMPILE_SDK_VERSION   = 27
 def DEFAULT_BUILD_TOOLS_VERSION   = "27.0.3"
 def DEFAULT_TARGET_SDK_VERSION    = 27
@@ -27,5 +33,5 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.facebook.react:react-native:+'
-    implementation 'com.github.superchenwb:Android-PickerView'
+    implementation 'com.github.superchenwb:Android-PickerView:1.0.0'
 }
