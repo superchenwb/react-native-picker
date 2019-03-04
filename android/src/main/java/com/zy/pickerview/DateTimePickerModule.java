@@ -227,16 +227,18 @@ public class DateTimePickerModule extends ReactContextBaseJavaModule implements 
     if(args.containsKey(ARG_MINDATE) && !args.containsKey((ARG_MAXDATE))) {
       startDate.setTimeInMillis(args.getLong(ARG_MINDATE));
       endDate.set(Calendar.DATE, endDate.get(Calendar.YEAR) + 10);
+      timePickerBuilder.setRangDate(startDate, endDate);
     } else if (args.containsKey(ARG_MAXDATE) && !args.containsKey(ARG_MINDATE)) {
       // 只设置了结束时间，没有设置开始时间
       startDate.setTimeInMillis(DEFAULT_MIN_DATE);
       endDate.setTimeInMillis(args.getLong(ARG_MAXDATE));
+      timePickerBuilder.setRangDate(startDate, endDate);
     } else if (args.containsKey(ARG_MAXDATE) && args.containsKey(ARG_MINDATE)) {
       // 同时设置了开始时间和结束时间
       startDate.setTimeInMillis(args.getLong(ARG_MINDATE));
       endDate.setTimeInMillis(args.getLong(ARG_MAXDATE));
+      timePickerBuilder.setRangDate(startDate, endDate);
     }
-    timePickerBuilder.setRangDate(startDate, endDate);
   }
 
   /**
