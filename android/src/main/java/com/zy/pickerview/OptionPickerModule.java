@@ -147,12 +147,12 @@ public class OptionPickerModule extends ReactContextBaseJavaModule implements Li
     optionsPickerBuilder = new OptionsPickerBuilder(activity, listener);
 
     setting(options);
-
+    pickerView = optionsPickerBuilder.build();
     if(options.hasKey(SELECT_VALUE) && !options.isNull(SELECT_VALUE)) {
       ReadableArray selectValueArray = options.getArray(SELECT_VALUE);
       setSelectedValue(selectValueArray);
     }
-    pickerView = optionsPickerBuilder.build();
+    
     setPickerData(pickerData);
   }
 
