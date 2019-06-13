@@ -33,5 +33,5 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.facebook.react:react-native:+'
-    implementation 'com.github.superchenwb:Android-PickerView:v1.0.6'
+    implementation 'com.github.superchenwb:Android-PickerView:v1.0.7'
 }
