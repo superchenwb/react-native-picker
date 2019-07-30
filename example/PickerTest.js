@@ -35,27 +35,47 @@ export default class PickerTest extends Component {
         return (
             <View style={{height: Dimensions.get('window').height}}>
                 <DatePickerView
-            //   value={planstarttime}
-              // minDate={dayjs('2000-01-01').toDate()}
-            //   maxDate={dayjs().add(1, 'day').toDate()}
-              confirmBtnColor={[ 255, 136, 8, 1 ]}
-              cancelBtnColor={[ 255, 136, 8, 1 ]}
-              onChange={this.onChangeDate}
-            >
-              <TouchableOpacity style={styles.datePicker}>
-                {
-                  planstarttime
-                    ?
-                    (
-                      <Text style={styles.dateText}>{dayjs(planstarttime).format('YYYY-MM-DD')}</Text>
-                    )
-                    : (
-                      <Text style={styles.placeholder}>选择日期</Text>
-                    )
-                }
-              </TouchableOpacity>
-            </DatePickerView>
-                
+                //   value={planstarttime}
+                // minDate={dayjs('2000-01-01').toDate()}
+                //   maxDate={dayjs().add(1, 'day').toDate()}
+                confirmBtnColor={[ 255, 136, 8, 1 ]}
+                cancelBtnColor={[ 255, 136, 8, 1 ]}
+                onChange={this.onChangeDate}
+                >
+                <TouchableOpacity style={styles.datePicker}>
+                    {
+                    planstarttime
+                        ?
+                        (
+                        <Text style={styles.dateText}>{dayjs(planstarttime).format('YYYY-MM-DD')}</Text>
+                        )
+                        : (
+                        <Text style={styles.placeholder}>默认选择日期</Text>
+                        )
+                    }
+                </TouchableOpacity>
+                </DatePickerView>
+                <DatePickerView
+                value={planstarttime}
+                minDate={dayjs('2000-01-01').toDate()}
+                maxDate={dayjs().add(1, 'day').toDate()}
+                confirmBtnColor={[ 255, 136, 8, 1 ]}
+                cancelBtnColor={[ 255, 136, 8, 1 ]}
+                onChange={this.onChangeDate}
+                >
+                <TouchableOpacity style={styles.datePicker}>
+                    {
+                    planstarttime
+                        ?
+                        (
+                        <Text style={styles.dateText}>{dayjs(planstarttime).format('YYYY-MM-DD')}</Text>
+                        )
+                        : (
+                        <Text style={styles.placeholder}>默认选择日期</Text>
+                        )
+                    }
+                </TouchableOpacity>
+                </DatePickerView>
             </View>
         );
     }
