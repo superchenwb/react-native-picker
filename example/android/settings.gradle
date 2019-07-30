@@ -1,0 +1,4 @@
+rootProject.name = 'example'
+include ':react-native-zy-picker'
+project(':react-native-zy-picker').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-zy-picker/android')
+include ':app'
